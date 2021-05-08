@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+akses_kelas,akses_kelas,sekolah.model_kelas_kelas,base.group_user,1,1,1,1
+akses_siswa,akses_siswa,sekolah.model_siswa_siswa,base.group_user,1,1,1,1

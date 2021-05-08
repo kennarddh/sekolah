@@ -12,6 +12,9 @@
     """,
     'depends': [],
     'data': [
+        "views/kelas_view.xml",
+        "views/menu_sekolah.xml",
+        "security/ir.model.access.csv"
     ],
     'demo': [
     ],
