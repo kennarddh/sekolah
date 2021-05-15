@@ -4,6 +4,7 @@ from odoo import api, fields, models, _
 
 class SiswaSiswa(models.Model):
     _name = "siswa.siswa"
+    _rec_name = 'nama'
     _description = "siswa"
 
     nama = fields.Char()
