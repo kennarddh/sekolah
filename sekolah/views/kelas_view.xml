@@ -57,6 +57,32 @@
                 </p>
             </field>
         </record>
+        <record id="sekolah_guru_action" model="ir.actions.act_window">
+            <field name="name">guru</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">guru.guru</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                tidak ada
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+        <record id="sekolah_mapel_action" model="ir.actions.act_window">
+            <field name="name">Mapel</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mata.pelajaran</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                tidak ada
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
 
     </data>
 </odoo>
