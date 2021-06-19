@@ -24,3 +24,7 @@ class KelasKelas(models.Model):
 
     name = fields.Char()
     siswa_ids = fields.One2many(comodel_name="siswa.siswa", inverse_name="kelas_id", string="siswa terdaftar", required=False)
+    jadwal_berjalan_ids = fields.One2many(comodel_name="jadwal.berjalan", inverse_name="kelas_id", string="Jadwal Berjalan", required=False, )
+
+    def generate_jadwal_berjalan(self):
+        return

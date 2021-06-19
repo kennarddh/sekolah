@@ -24,6 +24,9 @@
             <field name="model">kelas.kelas</field>
             <field name="arch" type="xml">
                 <form string="kelas">
+                    <header>
+                        <button name="generate_jadwal_berjalan" string="Generate Jadwal Berjalan" class="oe_highlight" type="object"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
@@ -35,6 +38,19 @@
                                     <field name="nomer_telepon"/>
                                     <field name="jenisKelamin"/>
                                     <field name="tanggal_lahir"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="jadwal_berjalan_ids" mode="tree" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="tanggal"/>
+                                    <field name="mapel_id"/>
+                                    <field name="guru_id"/>
+                                    <field name="startMinute"/>
+                                    <field name="startHour"/>
+                                    <field name="endMinute"/>
+                                    <field name="endHour"/>
                                 </tree>
                             </field>
                         </group>
