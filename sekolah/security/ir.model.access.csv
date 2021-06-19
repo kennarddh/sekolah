@@ -3,3 +3,5 @@ akses_kelas,akses_kelas,sekolah.model_kelas_kelas,base.group_user,1,1,1,1
 akses_siswa,akses_siswa,sekolah.model_siswa_siswa,base.group_user,1,1,1,1
 akses_mapel,akses_mapel,sekolah.model_mata_pelajaran,base.group_user,1,1,1,1
 akses_guru,akses_guru,sekolah.model_guru_guru,base.group_user,1,1,1,1
+akses_japel,akses_japel,sekolah.model_jadwal_pelajaran,base.group_user,1,1,1,1
+akses_jadet,akses_jadet,sekolah.model_jadwal_detail,base.group_user,1,1,1,1

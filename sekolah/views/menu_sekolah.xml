@@ -10,5 +10,6 @@
         <menuitem id="menu_sekolah_kelas_action" name="kelas" parent="menu_sekolah_categ" action="sekolah_kelas_action" sequence="10"/>
         <menuitem id="menu_sekolah_guru_action" name="guru" parent="menu_sekolah_categ" action="sekolah_guru_action" sequence="10"/>
         <menuitem id="menu_sekolah_mapel_action" name="mapel" parent="menu_sekolah_categ" action="sekolah_mapel_action" sequence="10"/>
+        <menuitem id="menu_sekolah_japel_action" name="japel" parent="menu_sekolah_categ" action="sekolah_japel_action" sequence="10"/>
     </data>
 </odoo>
