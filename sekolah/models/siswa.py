@@ -1,6 +1,8 @@
 from odoo.exceptions import UserError, ValidationError
 from odoo import api, fields, models, _
-
+from odoo.exceptions import UserError, AccessError, ValidationError
+import logging
+from datetime import date
 
 class SiswaSiswa(models.Model):
     _name = "siswa.siswa"
@@ -27,4 +29,7 @@ class KelasKelas(models.Model):
     jadwal_berjalan_ids = fields.One2many(comodel_name="jadwal.berjalan", inverse_name="kelas_id", string="Jadwal Berjalan", required=False, )
 
     def generate_jadwal_berjalan(self):
-        return
+        dateNow = date.today().weekday()
+
+        logging.info(dateNow)
+        raise UserError(dateNow)

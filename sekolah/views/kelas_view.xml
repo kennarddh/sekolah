@@ -31,7 +31,7 @@
                         <group>
                             <field name="name"/>
                         </group>
-                        <group>
+                        <group string="Nama - Nama Siswa">
                             <field name="siswa_ids" mode="tree" nolabel="1">
                                 <tree editable="bottom">
                                     <field name="nama"/>
@@ -41,7 +41,7 @@
                                 </tree>
                             </field>
                         </group>
-                        <group>
+                        <group string="Jadwal berjalan">
                             <field name="jadwal_berjalan_ids" mode="tree" nolabel="1">
                                 <tree editable="bottom">
                                     <field name="tanggal"/>
