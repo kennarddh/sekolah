@@ -31,5 +31,9 @@ class KelasKelas(models.Model):
     def generate_jadwal_berjalan(self):
         dateNow = date.today().weekday()
 
+        template = self.env["jadwal.pelajaran"].search([("hari", "=", dateNow)])
+
         logging.info(dateNow)
-        raise UserError(dateNow)
+        logging.info(type(dateNow))
+        logging.info(template)
+        logging.info(type(template))
