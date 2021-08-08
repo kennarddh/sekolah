@@ -15,6 +15,7 @@
         "views/kelas_view.xml",
         "views/japel_view.xml",
         "views/menu_sekolah.xml",
+        "data/scheduled_action.xml",
         "security/ir.model.access.csv"
     ],
     'demo': [

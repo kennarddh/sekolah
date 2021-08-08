@@ -29,8 +29,14 @@ class KelasKelas(models.Model):
     siswa_ids = fields.One2many(comodel_name="siswa.siswa", inverse_name="kelas_id", string="siswa terdaftar", required=False)
     jadwal_berjalan_ids = fields.One2many(comodel_name="jadwal.berjalan", inverse_name="kelas_id", string="Jadwal Berjalan", required=False, )
 
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': _('Import Template for Kelas'),
+            'template': '/sekolah/static/xls/template.xls'
+        }]
+
     def generate_jadwal_berjalan(self):
-        ipdb.set_trace()
         exist = self.jadwal_berjalan_ids.filtered(lambda x: x.tanggal == date.today())
 
         if exist:
@@ -47,3 +53,9 @@ class KelasKelas(models.Model):
             data["guru_id"] = guru[0].id  # otomatis pilih guru yang masih kosong
             data["tanggal"] = date.today()
             self.update({"jadwal_berjalan_ids": [(0, 0, data)]})
+
+    def generate_jadwal_berjalan_task(self):
+        search = self.search([])
+
+        for row in search:
+            row.generate_jadwal_berjalan()
