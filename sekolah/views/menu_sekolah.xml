@@ -8,6 +8,7 @@
         <menuitem id="menu_sekolah_categ" name="master data" parent="menu_sekolah_root" sequence="10"/>
         <!-- This Menu Item must have a parent and an action -->
         <menuitem id="menu_sekolah_kelas_action" name="kelas" parent="menu_sekolah_categ" action="sekolah_kelas_action" sequence="10"/>
+        <menuitem id="menu_sekolah_siswa_action" name="siswa" parent="menu_sekolah_categ" action="sekolah_siswa_action" sequence="10"/>
         <menuitem id="menu_sekolah_guru_action" name="guru" parent="menu_sekolah_categ" action="sekolah_guru_action" sequence="10"/>
         <menuitem id="menu_sekolah_mapel_action" name="mapel" parent="menu_sekolah_categ" action="sekolah_mapel_action" sequence="10"/>
         <menuitem id="menu_sekolah_japel_action" name="japel" parent="menu_sekolah_categ" action="sekolah_japel_action" sequence="10"/>

@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="siswa_form_view" model="ir.ui.view">
-            <field name="name">siswa.form.view</field>
-            <field name="model">siswa.siswa</field>
-            <field name="arch" type="xml">
-                <form string="">
-                    <sheet>
-                        <group>
-                            <field name="nama"/>
-                        </group>
-                        <group string="informasi pribadi">
-                            <field name="nomer_telepon"/>
-                            <field name="jenisKelamin"/>
-                            <field name="tanggal_lahir"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+
         <record id="kelas_form_view" model="ir.ui.view">
             <field name="name">kelas.form.view</field>
             <field name="model">kelas.kelas</field>
@@ -32,14 +15,7 @@
                             <field name="name"/>
                         </group>
                         <group string="Nama - Nama Siswa">
-                            <field name="siswa_ids" mode="tree" nolabel="1">
-                                <tree editable="bottom">
-                                    <field name="nama"/>
-                                    <field name="nomer_telepon"/>
-                                    <field name="jenisKelamin"/>
-                                    <field name="tanggal_lahir"/>
-                                </tree>
-                            </field>
+                            <field name="siswa_ids" mode="tree" widget="one2many_list" nolabel="1" readonly="1" />
                         </group>
                         <group string="Jadwal berjalan">
                             <field name="jadwal_berjalan_ids" mode="tree" nolabel="1">

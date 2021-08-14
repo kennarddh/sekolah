@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="siswa_form_view" model="ir.ui.view">
+            <field name="name">siswa.form.view</field>
+            <field name="model">siswa.siswa</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="nama"/>
+                        </group>
+                        <group string="informasi pribadi">
+                            <field name="nomer_telepon"/>
+                            <field name="jenisKelamin"/>
+                            <field name="tanggal_lahir"/>
+                        </group>
+                        <group string="Nama Kelas">
+                            <field name="kelas_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="siswa_tree_view" model="ir.ui.view">
+            <field name="name">siswa.tree.view</field>
+            <field name="model">siswa.siswa</field>
+            <field name="arch" type="xml">
+                <tree string="Siswa">
+                    <field name="nama"/>
+                    <field name="nomer_telepon"/>
+                    <field name="jenisKelamin"/>
+                    <field name="tanggal_lahir"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sekolah_siswa_action" model="ir.actions.act_window">
+            <field name="name">Siswa</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">siswa.siswa</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                     tidak ada Siswa
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -13,6 +13,7 @@
     'data': [
         "views/guru_view.xml",
         "views/kelas_view.xml",
+        "views/siswa_view.xml",
         "views/japel_view.xml",
         "views/menu_sekolah.xml",
         "data/scheduled_action.xml",
