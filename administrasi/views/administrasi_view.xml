@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="administrasi_form_view" model="ir.ui.view">
+           <field name="name">administrasi.form.view</field>
+           <field name="model">administrasi.sekolah</field>
+           <field name="arch" type="xml">
+               <form string="Administrasi">
+                   <sheet>
+                       <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                       <group>
+                           <group>
+                               <field name="siswa_id"/>
+                               <field name="confirmation_date"/>
+                           </group>
+                       </group>
+                       <group>
+                           <field name="administrasi_sekolah_line_ids" mode="tree" nolabel="1">
+                               <tree editable="bottom">
+                                   <field name="name"/>
+                                   <field name="bulan"/>
+                                   <field name="tahun"/>
+                                   <field name="nominal"/>
+                               </tree>
+                           </field>
+                       </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="administrasi_action_view" model="ir.actions.act_window">
+            <field name="name">Administrasi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">administrasi.sekolah</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <h1>No Content</h1>
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

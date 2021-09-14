@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <!-- This Menu Item must have a parent and an action -->
+       <menuitem id="administrasi_menu" name="Administrasi" action="administrasi_action_view" sequence="10"/>
+
+    </data>
+</odoo>
