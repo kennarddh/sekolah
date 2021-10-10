@@ -1,25 +1,25 @@
 from odoo import api, fields, models
 
-
-class AdministrasiSekolah(models.Model):
-    _name = 'administrasi.sekolah'
+class PerpustakaanSekolah(models.Model):
+    _name = 'perpustakaan.sekolah'
     _rec_name = 'name'
-    _description = 'Administrasi Sekolah'
+    _description = 'Perpustakaan Sekolah'
 
     name = fields.Char(default="New")
-    state = fields.Selection(default="new", string="State", selection=[('new', 'New'), ('confirm', 'Confirm'), ], required=False, )
+    state = fields.Selection(default="new", string="State", selection=[('new', 'New'), ('confirm', 'Confirm'), ],
+                             required=False, )
     siswa_id = fields.Many2one(comodel_name="siswa.siswa", string="Siswa", required=False, )
     confirmation_date = fields.Datetime()
     total = fields.Float(compute="compute_total")
-    currency_id = fields.Many2one(comodel_name="res.currency", string="Currency", required=False, default=lambda self: self.env.ref('base.IDR'))
-    administrasi_sekolah_line_ids = fields.One2many(
-        comodel_name="administrasi.sekolah.line",
-        inverse_name="administrasi_sekolah_id",
-        string="Line",
-        required=False)
+    currency_id = fields.Many2one(
+        comodel_name="res.currency", string="Currency", required=False,
+        default=lambda self: self.env.ref('base.IDR')
+    )
+
+    perpustakaan_sekolah_line_ids = fields.One2many(comodel_name="perpustakaan.sekolah.line", inverse_name="perpustakaan_sekolah_id", string="Perpustakaan Sekolah", required=False, )
 
     def compute_total(self):
-        total = sum(x.nominal for x in self.administrasi_sekolah_line_ids)
+        total = sum(x.nominal for x in self.perpustakaan_sekolah_line_ids)
 
         self.update({"total": total})
 
@@ -27,7 +27,7 @@ class AdministrasiSekolah(models.Model):
 
     def action_confirm(self):
         if self.name.lower() == "new":
-            newName = self.env.ref('administrasi.seq_administrasi_sekolah').next_by_id()
+            newName = self.env.ref('administrasi.seq_perpustakaan_sekolah').next_by_id()
         else:
             newName = self.name
 
@@ -38,13 +38,16 @@ class AdministrasiSekolah(models.Model):
         return
 
     def action_new(self):
-        self.update({'state': 'new'})
+        self.update({
+            'state': 'new'
+        })
+
         return
 
-class AdministrasiSekolahLine(models.Model):
-    _name = 'administrasi.sekolah.line'
+class PerpustakaanSekolahLine(models.Model):
+    _name = 'perpustakaan.sekolah.line'
     _rec_name = 'name'
-    _description = 'Administrasi Sekolah Line'
+    _description = 'Perpustakaan Sekolah Line'
 
     name = fields.Char()
     bulan = fields.Selection(string="Bulan", selection=[
@@ -67,4 +70,4 @@ class AdministrasiSekolahLine(models.Model):
     ], required=False, )
 
     nominal = fields.Float()
-    administrasi_sekolah_id = fields.Many2one(comodel_name="administrasi.sekolah", string="Administrasi Sekolah", required=False, )
+    perpustakaan_sekolah_id = fields.Many2one(comodel_name="perpustakaan.sekolah", string="Perpustakaan Sekolah", required=False, )

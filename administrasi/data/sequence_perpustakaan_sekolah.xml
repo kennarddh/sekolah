@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="seq_perpustakaan_sekolah" model="ir.sequence">
+            <field name="name">Perpustakaan Sekolah</field>
+            <field name="code">perpustakaan.sekolah</field>
+            <field name="prefix">PS</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

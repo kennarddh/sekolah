@@ -15,7 +15,11 @@
     'data': [
         "security/ir.model.access.csv",
         "views/administrasi_view.xml",
-        "views/administrasi_menu.xml"
+        "views/perpustakaan_sekolah_view.xml",
+        "data/sequence_administrasi_sekolah.xml",
+        "data/sequence_perpustakaan_sekolah.xml",
+        "views/administrasi_menu.xml",
+        "views/perpustakaan_sekolah_menu.xml"
     ],
     'demo': [
     ],

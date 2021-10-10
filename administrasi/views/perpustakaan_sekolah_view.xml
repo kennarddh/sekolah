@@ -2,11 +2,11 @@
 <odoo>
     <data>
 
-       <record id="administrasi_form_view" model="ir.ui.view">
-           <field name="name">administrasi.form.view</field>
-           <field name="model">administrasi.sekolah</field>
-           <field name="arch" type="xml">
-               <form string="Administrasi">
+        <record id="perpustakaan_sekolah_form_view" model="ir.ui.view">
+            <field name="name">perpustakaan.sekolah.form.view</field>
+            <field name="model">perpustakaan.sekolah</field>
+            <field name="arch" type="xml">
+                <form string="Administrasi">
                    <header>
                        <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" states="new" confirm="Confirm" help="Hoeolop"/>
                        <button name="action_new" type="object" string="New" class="oe_highlight" states="confirm" confirm="New" help="Noeowo oHoeolop"/>
@@ -25,7 +25,7 @@
                            </group>
                        </group>
                        <group>
-                           <field name="administrasi_sekolah_line_ids" mode="tree" nolabel="1">
+                           <field name="perpustakaan_sekolah_line_ids" mode="tree" nolabel="1">
                                <tree editable="bottom">
                                    <field name="name"/>
                                    <field name="bulan"/>
@@ -41,20 +41,22 @@
                             <field name="total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                        </group>
                    </sheet>
-               </form>
-           </field>
-       </record>
+                </form>
+            </field>
+        </record>
 
-        <record id="administrasi_action_view" model="ir.actions.act_window">
-            <field name="name">Administrasi</field>
+        <record id="perpustakaan_sekolah_action_view" model="ir.actions.act_window">
+            <field name="name">Perpustakaan Sekolah</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">administrasi.sekolah</field>
+            <field name="res_model">perpustakaan.sekolah</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                <h1>No Content</h1>
+                <h1>
+                    Data Tidak Ada
+                </h1>
               </p><p>
-                <!-- More details about what a user can do with this object will be OK -->
+                <h1>Klik Create Untuk Menambahkan</h1>
               </p>
             </field>
         </record>
