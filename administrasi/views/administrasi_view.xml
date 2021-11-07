@@ -8,11 +8,16 @@
            <field name="arch" type="xml">
                <form string="Administrasi">
                    <header>
-                       <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" states="new" confirm="Confirm" help="Hoeolop"/>
-                       <button name="action_new" type="object" string="New" class="oe_highlight" states="confirm" confirm="New" help="Noeowo oHoeolop"/>
+                       <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" groups="base.group_system" states="new" confirm="Confirm" help="Hoeolop"/>
+                       <button name="action_new" type="object" string="New" class="oe_highlight" states="confirm" groups="base.group_system" confirm="New" help="Noeowo oHoeolop"/>
                        <field name="state" widget="statusbar" statusbar_vible="new,confirm"/>
                    </header>
                    <sheet>
+                       <div class="oe_button_box" name="button_box">
+                            <button name="action_perpustakaan_sekolah" type="object" class="oe_stat_button" icon="fa-book">
+                                <field name="perpustakaan_count" widget="statinfo" string="Perpustakaan" />
+                            </button>
+                        </div>
                        <div class="oe_title">
                             <h1>
                                 <field name="name" readonly="1"/>

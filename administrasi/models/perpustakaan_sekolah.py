@@ -1,4 +1,6 @@
 from odoo import api, fields, models
+from datetime import datetime
+
 
 class PerpustakaanSekolah(models.Model):
     _name = 'perpustakaan.sekolah'
@@ -9,7 +11,7 @@ class PerpustakaanSekolah(models.Model):
     state = fields.Selection(default="new", string="State", selection=[('new', 'New'), ('confirm', 'Confirm'), ],
                              required=False, )
     siswa_id = fields.Many2one(comodel_name="siswa.siswa", string="Siswa", required=False, )
-    confirmation_date = fields.Datetime()
+    confirmation_date = fields.Datetime(readonly=True)
     total = fields.Float(compute="compute_total")
     currency_id = fields.Many2one(
         comodel_name="res.currency", string="Currency", required=False,
@@ -33,7 +35,8 @@ class PerpustakaanSekolah(models.Model):
 
         self.update({
             'state': 'confirm',
-            'name': newName
+            'name': newName,
+            'confirmation_date': datetime.today()
         })
         return
 
