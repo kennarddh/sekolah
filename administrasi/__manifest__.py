@@ -10,7 +10,8 @@
     ...
     """,
     'depends': [
-        'sekolah'
+        'sekolah',
+        'mail'
     ],
     'data': [
         "security/ir.model.access.csv",

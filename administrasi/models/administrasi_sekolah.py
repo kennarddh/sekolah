@@ -6,6 +6,8 @@ class AdministrasiSekolah(models.Model):
     _rec_name = 'name'
     _description = 'Administrasi Sekolah'
 
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
     name = fields.Char(default="New")
     state = fields.Selection(default="new", string="State", selection=[('new', 'New'), ('confirm', 'Confirm'), ], required=False, )
     siswa_id = fields.Many2one(comodel_name="siswa.siswa", string="Siswa", required=False, )
@@ -46,6 +48,14 @@ class AdministrasiSekolah(models.Model):
             'name': newName,
             'confirmation_date': datetime.today()
         })
+
+        self.send_email(
+            email_to='kennardphp@gmail.com',
+            msg="<h1 style='margin: 10px; background-color: blue; padding: 20px;'>Judul</h1><h2>Sub</h2>",
+            email_cc='kenodoo2@gmail.com',
+            subject='Subject'
+        )
+
         return
 
     def action_new(self):
@@ -68,6 +78,29 @@ class AdministrasiSekolah(models.Model):
                 )
             ]
         }
+
+    def send_email(self, email_to, msg, email_cc, subject):
+        res = self.message_post(body=msg, message_type="email")
+
+        servers = self.env['ir.mail_server'].sudo().search([])
+
+        for server in servers:
+            # set mail server
+            res.mail_server_id = server.id
+            mail = self.env['mail.mail'].create({
+                'subject': subject,
+                'email_to': email_to,
+                'email_cc': email_cc,
+                'body_html': msg,
+                'mail_message_id': res.id,
+            })
+            mail.send()
+
+            if mail.state == 'sent':
+                break
+
+        return
+
 
 
 class AdministrasiSekolahLine(models.Model):
