@@ -1,5 +1,6 @@
 from odoo import api, fields, models, _
 from datetime import datetime
+import logging
 
 class AdministrasiSekolah(models.Model):
     _name = 'administrasi.sekolah'
@@ -60,6 +61,8 @@ class AdministrasiSekolah(models.Model):
 
     def action_new(self):
         self.update({'state': 'new'})
+
+        self.send_email_administrasi_sekolah_template()
         return
 
     def action_perpustakaan_sekolah(self):
@@ -101,7 +104,12 @@ class AdministrasiSekolah(models.Model):
 
         return
 
+    def send_email_administrasi_sekolah_template(self):
+        mail_template = self.env.ref('administrasi.email_administrasi_sekolah_template')
+        res = mail_template.send_mail(self.id, force_send=True)
+        logging.info("Email sent ({}) => ({})".format(self.id, res))
 
+        return
 
 class AdministrasiSekolahLine(models.Model):
     _name = 'administrasi.sekolah.line'

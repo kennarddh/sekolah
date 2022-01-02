@@ -4,21 +4,18 @@
         <record id="email_administrasi_sekolah_template" model="mail.template">
             <field name="name">Admininistrasi sekolah</field>
             <field name="model_id" ref="administrasi.model_administrasi_sekolah"/>
-            <field name="subject">Administrasi sekolah ${object.siswa_id.name}</field>
+            <field name="subject">Administrasi sekolah ${object.siswa_id.nama}</field>
             <field name="email_from">email@administrasisekolah.com</field>
             <field name="email_to">kennardphp@gmail.com</field>
             <field name="body_html" type="html">
-                <!DOCTYPE html>
                 <html lang="en">
                     <head>
                         <meta charset="UTF-8" />
                         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                         <title>Administrasi sekolah</title>
-                    </head>
-                    <body>
                         <style>
-                            .container {
+                            .container-administrasi-sekolah {
                                 padding: 10px 20px;
                                 background-color: rgb(197, 197, 197);
                                 display: flex;
@@ -27,7 +24,7 @@
                                 align-items: flex-start;
                                 width: fit-content;
                             }
-                            .container .card {
+                            .container-administrasi-sekolah .card-administrasi-sekolah {
                                 padding: 10px 20px;
                                 background-color: rgb(143, 143, 143);
                                 display: flex;
@@ -38,14 +35,16 @@
                                 border-radius: 25px;
                             }
                         </style>
-                        <div class="container">
-                            <h1 class="title">Administrasi sekolah</h1>
-                            <div class="body">
-                                <div class="card">
-                                    <div class="title">${object.siswa_id.name}</div>
-                                    <div class="description">
-                                        <p class="item">Total: ${object.total}</p>
-                                        <p class="item">Confirmation date: ${object.confirmation_date}</p>
+                    </head>
+                    <body>
+                        <div class="container-administrasi-sekolah">
+                            <h1 class="title-administrasi-sekolah">Administrasi sekolah</h1>
+                            <div class="body-administrasi-sekolah">
+                                <div class="card-administrasi-sekolah">
+                                    <div class="title-administrasi-sekolah">${object.siswa_id.nama}</div>
+                                    <div class="description-administrasi-sekolah">
+                                        <p class="item-administrasi-sekolah">Total: ${object.total}</p>
+                                        <p class="item-administrasi-sekolah">Confirmation date: ${object.confirmation_date}</p>
                                     </div>
                                 </div>
                             </div>
