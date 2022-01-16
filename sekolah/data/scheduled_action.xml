@@ -15,5 +15,18 @@
             <field name="doall">true</field>
         </record>
 
+<!--        <record forcecreate="True" id="get_nama_siswa_api_external" model="ir.cron">-->
+<!--            <field name="name">Get nama siswa api external</field>-->
+<!--            <field name="model_id" ref="model_siswa_siswa" />-->
+<!--            <field name="user_id" ref="base.user_root" />-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.get_import_nama_siswa()</field>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">days</field>-->
+<!--            <field name="priority">5</field>-->
+<!--            <field name="doall">true</field>-->
+<!--        </record>-->
+
     </data>
 </odoo>
